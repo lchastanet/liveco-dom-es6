@@ -26,3 +26,16 @@ checkBox.addEventListener("change", (e) => {
 
   renderList(houseFiltered)
 })
+
+const searchInput = document.querySelector(".search-input")
+
+searchInput.addEventListener("keyup", (e) => {
+  const textInput = e.target.value
+  const regex = new RegExp(textInput, "i")
+
+  const houseFiltered = houseToRent.filter(
+    (house) => house.name.search(regex) >= 0
+  )
+
+  renderList(houseFiltered)
+})
