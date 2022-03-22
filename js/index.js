@@ -14,3 +14,15 @@ select.addEventListener("change", (e) => {
 
   renderList(houseFiltered)
 })
+
+const checkBox = document.querySelector(".available-checkbox")
+
+checkBox.addEventListener("change", (e) => {
+  const isChecked = e.target.checked
+
+  const houseFiltered = houseToRent.filter(
+    (house) => house.available === isChecked
+  )
+
+  renderList(houseFiltered)
+})
